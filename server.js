@@ -54,7 +54,7 @@ app.delete("/delete/:id", async (req, res) => {
 });
 
 //edit user
-app.patch("/edit/:id",async(req,res)=>{
+app.put("/edit/:id",async(req,res)=>{
     try {
         const editedUser=await User.findByIdAndUpdate(req.params.id,{...req.body},{new:true})
         res.send(editedUser)
